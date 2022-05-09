@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="User" on="05/09/22||12:02:05" using="Simscape Multibody Link Version 7.4" from="Autodesk Inventor 2020 (Build 240168000, 168)"/>
+<ModelUnits mass="kilogram" length="millimeter"/>
+<DataUnits mass="kilogram" length="centimeter"/>
+<RootAssembly name="FINAL4R.iam" uid="FINAL4R.iam_{640DD484-43EB-A4E6-1F1E-808EBBCBE8FA}" version="{B8B0DA22-3127-7D01-9552-E0E8AF541546}">
+<AssemblyFile name="FINAL4R.iam" type="Inventor Assembly"/>
+<InstanceTree>
+<Instance name="Chasis2:1" grounded="true" uid="Chasis2:1" entityUid="Chasis2.ipt_{985A9282-4A38-AC33-B812-59857F3CED25}">
+<Transform>
+<Rotation>0.99999999999999989 0 -1.043059680107456e-15 -1.0430596801074558e-15 0 -1 0 0.99999999999999989 0</Rotation>
+<Translation>-11.593247391595028 -7.9061377610323333 -4.5700464168128248</Translation>
+</Transform>
+</Instance>
+<Instance name="RUEDA16CM:1" uid="RUEDA16CM:1" entityUid="RUEDA16CM.ipt_{B7E20D25-408E-EE9F-3CA2-B59746723820}">
+<Transform>
+<Rotation>1.0920825207425087e-15 -1.0000000000000053 0 1.0000000000000002 1.3171211768560207e-15 0 -1.5333321806308404e-16 0 1.0000000000000053</Rotation>
+<Translation>3.4067526084049784 13.34386223896764 -2.0700464168128421</Translation>
+</Transform>
+</Instance>
+<Instance name="RUEDA16CM:2" uid="RUEDA16CM:2" entityUid="RUEDA16CM.ipt_{B7E20D25-408E-EE9F-3CA2-B59746723820}">
+<Transform>
+<Rotation>1.0404419955701183e-15 -0.99999999999999811 0 1.0000000000000011 8.0990066267561571e-16 0 0 1.1102230246251519e-16 0.99999999999999878</Rotation>
+<Translation>-26.593247391595025 13.343862238967672 -2.0700464168128287</Translation>
+</Transform>
+</Instance>
+<Instance name="RUEDA16CM:3" uid="RUEDA16CM:3" entityUid="RUEDA16CM.ipt_{B7E20D25-408E-EE9F-3CA2-B59746723820}">
+<Transform>
+<Rotation>-1.2859075029700036e-15 0.26293905240445142 0.96481244535953703 -1.0000000000000002 -4.0173813993502284e-16 -1.0224573340653128e-15 2.1393028171072803e-16 -0.96481244535953525 0.26293905240445153</Rotation>
+<Translation>3.4067526084049358 -29.156137761032333 -2.0700464168128425</Translation>
+</Transform>
+</Instance>
+<Instance name="RUEDA16CM:4" uid="RUEDA16CM:4" entityUid="RUEDA16CM.ipt_{B7E20D25-408E-EE9F-3CA2-B59746723820}">
+<Transform>
+<Rotation>-7.8364012512879705e-16 -0.83920456492805462 0.54381586792214287 -1.0000000000000002 6.6512520693287004e-16 -5.1584594601877898e-16 1.7193189555335153e-16 -0.54381586792214265 -0.83920456492805506</Rotation>
+<Translation>-26.593247391595057 -29.156137761032301 -2.0700464168128354</Translation>
+</Transform>
+</Instance>
+<Instance name="TAPA:1" uid="TAPA:1" entityUid="TAPA.ipt_{BF0DE6F1-42DA-AAFB-65A3-E9A3B8947B2A}">
+<Transform>
+<Rotation>-9.8185879078236973e-16 -1.4895134596215483e-16 1 -1 -1.6081226496766361e-16 -9.8185879078236973e-16 1.6081226496766376e-16 -1 -1.4895134596215468e-16</Rotation>
+<Translation>-5.5628313729485876 -7.9061377610323422 29.929953583187146</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincidencia:1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RUEDA16CM:4</Uid>
+</InstancePath>
+<Position>-1.2499999999999964 3.5527136788005009e-15 1.7763568394002505e-15</Position>
+<Axis>0.99999999999999989 1.22464679914735e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-25.000000000000007 0 20</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RUEDA16CM:3</Uid>
+</InstancePath>
+<Position>-1.2499999999999964 4.4408920985006262e-16 0</Position>
+<Axis>0.99999999999999989 1.2246467991473515e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-25.000000000000007 0 20</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:3">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RUEDA16CM:1</Uid>
+</InstancePath>
+<Position>-1.2499999999999982 8.8817841970012523e-16 -4.4408920985006262e-16</Position>
+<Axis>0.99999999999999978 1.2246467991473436e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>24.999999999999993 8.8817841970012523e-16 -19.999999999999993</Position>
+<Axis>1.4210854715201997e-16 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:7">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RUEDA16CM:4</Uid>
+</InstancePath>
+<Position>1.2500000000000036 0 1.7763568394002505e-15</Position>
+<Axis>-0.99999999999999989 -1.22464679914735e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-15.000000000000009 2.4999999999999969 20</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:8">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RUEDA16CM:3</Uid>
+</InstancePath>
+<Position>1.2500000000000036 -4.4408920985006262e-16 4.4408920985006262e-16</Position>
+<Axis>-0.99999999999999989 -1.2246467991473515e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>14.999999999999993 2.4999999999999862 19.999999999999993</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:9">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>TAPA:1</Uid>
+</InstancePath>
+<Position>13.999999999999993 1.25 -17.719750000000012</Position>
+<Axis>1 1.2246467991473532e-16 7.6559460443962481e-16</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-11.689333981353586 33.25 14.000000000000009</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:10">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TAPA:1</Uid>
+</InstancePath>
+<Position>13.999999999999996 2.5 -16.469750000000001</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-11.68933398135359 33.25 14.000000000000009</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:11">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>RUEDA16CM:2</Uid>
+</InstancePath>
+<Position>-1.2499999999999982 -3.5527136788005009e-15 4.4408920985006262e-16</Position>
+<Axis>0.99999999999999889 1.2246467991473554e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>24.999999999999993 8.8817841970012523e-16 -19.999999999999993</Position>
+<Axis>1.4210854715201997e-16 0 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:12">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RUEDA16CM:2</Uid>
+</InstancePath>
+<Position>1.8545078533116417 -7.1054273576010019e-15 0</Position>
+<Axis>0.99999999999999889 1.2246467991473554e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>-15.000000000000012 2.4999999999999942 -19.999999999999986</Position>
+<Axis>-1.5446581212176081e-16 -1.2246467991473532e-16 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincidencia:13">
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>RUEDA16CM:1</Uid>
+</InstancePath>
+<Position>1.8545078533116435 0 0</Position>
+<Axis>0.99999999999999978 1.2246467991473436e-16 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="cylinder">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>14.999999999999989 2.4999999999999836 -20</Position>
+<Axis>-1.5446581212176081e-16 -1.2246467991473532e-16 -1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Angle name="Ángulo:1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>TAPA:1</Uid>
+</InstancePath>
+<Position>7.9936057773011271e-15 3.5 18.469750000000008</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Chasis2:1</Uid>
+</InstancePath>
+<Position>1.7763568394002505e-15 31 0</Position>
+<Axis>0 1 0</Axis>
+</ConstraintGeometry>
+</Angle>
+</Constraints>
+<Joints>
+</Joints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Chasis2.ipt" uid="Chasis2.ipt_{985A9282-4A38-AC33-B812-59857F3CED25}" version="{784626F5-BAF4-DD07-EF92-45A87AA5D961}">
+<PartFile name="Chasis2.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>26.378552457173726</Mass>
+<CenterOfMass>-9.519169894335672 17.146545199823802 -4.4132566415817608e-15</CenterOfMass>
+<Inertia>7647.3352952567739 10943.436230523079 9644.0785911922121 -1.3347542842661516e-13 1.1081772267743564e-12 780.03343117268014</Inertia>
+</MassProperties>
+<GeometryFile name="Chasis2_ipt_1e3ea769.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+<Part name="RUEDA16CM.ipt" uid="RUEDA16CM.ipt_{B7E20D25-408E-EE9F-3CA2-B59746723820}" version="{DD3DC41E-4559-28D1-FD01-5EA5EE865694}">
+<PartFile name="RUEDA16CM.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>0.61034995205750786</Mass>
+<CenterOfMass>2.6560483236249364 -2.7537889051104494e-06 3.0720445532091643e-06</CenterOfMass>
+<Inertia>27.542550327879482 15.005570804623341 15.005380771064514 1.8926952888796026e-06 -2.8892624913852996e-06 2.6481280017446092e-06</Inertia>
+</MassProperties>
+<GeometryFile name="RUEDA16CM_ipt_849a4f95.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+<Part name="TAPA.ipt" uid="TAPA.ipt_{BF0DE6F1-42DA-AAFB-65A3-E9A3B8947B2A}" version="{AA76E917-A0F3-E97D-0315-6F926B880CDF}">
+<PartFile name="TAPA.ipt" type="Inventor Part"/>
+<MassProperties>
+<Mass>3.5393176155206154</Mass>
+<CenterOfMass>0 1.2722838976984734 0.5848204720819199</CenterOfMass>
+<Inertia>412.89013987817532 827.14435055085335 418.10269841467868 -1.4129000017774087 0 -1.4551915228366852e-14</Inertia>
+</MassProperties>
+<GeometryFile name="TAPA_ipt_424918ed.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Diffuse r="0.74901960784313726" g="0.74901960784313726" b="0.74901960784313726" a="1"/>
+<Specular r="0" g="0" b="0" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.14999999999999999</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
