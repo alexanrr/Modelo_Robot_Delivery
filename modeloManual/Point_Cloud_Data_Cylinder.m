@@ -54,13 +54,18 @@ ang_cb = ang_ca+pi/n_c;
 ptcld = [];
 for i = 0:n_h
     if(rem(i,2)==0)
+        %pts_x = cos(ang_ca)*radius;
+        %pts_y = sin(ang_ca)*radius;
         pts_x = cos(ang_ca)*radius;
         pts_y = sin(ang_ca)*radius;
+
     else
+        %pts_x = cos(ang_cb)*radius;
+        %pts_y = sin(ang_cb)*radius;
         pts_x = cos(ang_cb)*radius;
         pts_y = sin(ang_cb)*radius;
     end
-    pts_z = i/n_h*height*ones(size(pts_x))-height/2;
+    pts_z = i/n_h*height*ones(size(pts_y))-height/2;
     ptcld = [ptcld;pts_x' pts_y' pts_z'];
 end
 

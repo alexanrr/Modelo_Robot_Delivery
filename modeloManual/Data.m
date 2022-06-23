@@ -1,15 +1,14 @@
 
+
+%% Geometria de la nube de puntos
 run('Point_Cloud_Data_Cylinder.m');
 
-
 %% Datos de la nube de puntos
-radius = 0.08;
-height = 0.03;
+radius = 0.082;
+height = 0.045;
 caps = true;
 numpts = 50 ;
 rueda_ptcld  = Point_Cloud_Data_Cylinder(radius,height,numpts,caps);
-
-%rueda_ptcld  = Point_Could_Data_Circle(radius,200);
 
 
 %% 
@@ -23,3 +22,10 @@ m2= (1/R)*m1;
 m3= pinv(m2);
 x0= 0;
 y0= 0;
+
+%% Ruta a seguir
+M= [0,0; 1,1; 6,2; 3,3; 4,4 ; 5,5];
+
+%%  Simulacion del modelo
+
+%sim("ModeloManual");
