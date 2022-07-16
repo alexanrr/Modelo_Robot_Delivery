@@ -24,7 +24,7 @@ x0= 0;
 y0= 0;
 
 %% Ruta a seguir
-M= [0,0; 1,1; 6,2; 3,3; 4,4 ; 5,5];
+M= [0,0; 1,1; 4,2; 3,4 ; 5,5];
 
 %%  Simulacion del modelo
 
