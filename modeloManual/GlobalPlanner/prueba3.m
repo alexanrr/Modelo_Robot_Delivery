@@ -55,7 +55,8 @@ show(planner);
 %show(prm)
 
 
-%% 
+%% Guardar trayectoria
+
 time = clock;
 time_test = strcat(num2str(time(1)),'_',... % Returns year 
     num2str(time(2)),'_',... % Returns month 
@@ -63,6 +64,5 @@ time_test = strcat(num2str(time(1)),'_',... % Returns year
     num2str(time(4)),'_',... % returns hour 
     num2str(time(5)),'_',... % returns min 
     num2str(fix(time(6))));
-
 
 %save(strcat('.\TrayectoriaGlobal\Planning_',time_test), 'u','start','goal');

@@ -4,7 +4,6 @@ clear all; clc
 load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_7_29_15_11_9');
 
 
-
 %% Datos sobre el contacto rueda
 radius = 0.082;
 height = 0.045;
@@ -28,7 +27,7 @@ pos_inicial = start;
 x0= pos_inicial(1);
 y0= pos_inicial(2);
 
-%objetivo
+% objetivo
 pos_final = goal;
 x_obj = pos_final(1);
 y_obj = pos_final(2);
@@ -39,7 +38,7 @@ pos_z = zeros(numel(u(:,1)),1);
 pointCloud = [u(:,1)  u(:,2) pos_z];
 
 
-%% Datos 
+%% Datos fisicos
 M_chasis = 35;          %kg
 M_rueda =  0.9;         %kg
 K_M = 2585.125;         %N/m
