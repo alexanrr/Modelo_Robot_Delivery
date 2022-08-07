@@ -1,4 +1,4 @@
-clear;clc;
+%clear;clc;
 S = shaperead('file2.shp');
 figure(1)
 mapshow(S)

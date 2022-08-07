@@ -24,18 +24,20 @@ m3= pinv(m2);
 
 % Inicial
 pos_inicial = start;
-x0= pos_inicial(1);
-y0= pos_inicial(2);
+x0= 445; %pos_inicial(1);
+y0= 316; %pos_inicial(2);
+
 
 % objetivo
 pos_final = goal;
 x_obj = pos_final(1);
 y_obj = pos_final(2);
 
-pos_z = zeros(numel(u(:,1)),1);
+pos_z = ones(numel(u(:,1)),1);
+zzz= pos_z*5;
 
 %Puntos de trayectoria
-pointCloud = [u(:,1)  u(:,2) pos_z];
+pointCloud = [u(:,1)  u(:,2) zzz];
 
 
 %% Datos fisicos
@@ -50,6 +52,3 @@ K_m = 3000;             %N/m
 
 %%  Simulacion del modelo
 %sim("ModeloManual");
-
-
-
