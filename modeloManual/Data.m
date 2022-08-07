@@ -33,11 +33,11 @@ pos_final = goal;
 x_obj = pos_final(1);
 y_obj = pos_final(2);
 
-pos_z = ones(numel(u(:,1)),1);
-zzz= pos_z*5;
+pos_z = zeros(numel(u(:,1)),1);
+%zzz= pos_z*5;
 
 %Puntos de trayectoria
-pointCloud = [u(:,1)  u(:,2) zzz];
+pointCloud = [u(:,1)  u(:,2) pos_z];
 
 
 %% Datos fisicos
