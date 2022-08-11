@@ -47,6 +47,8 @@ start=[p2,p1]
 goal=[f2,f1]
 
 u=plan(planner,start,goal);
+xlim([0 5])
+
 show(planner);
 
 %prm = mobileRobotPRM(map,200);
