@@ -62,4 +62,4 @@ K_m = 3000;             %N/m
 
 
 %%  Simulacion del modelo
-sim("ModeloManual");
+%sim("ModeloManual");
