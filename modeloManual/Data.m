@@ -1,7 +1,8 @@
 clear all; clc;
 
 %% Cargar planificacion global
-load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_7_29_15_11_9');
+%load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_7_29_15_11_9');
+load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_18_14_16_13');
 
 %% Datos sobre el contacto rueda
 radius = 0.082;
@@ -17,10 +18,12 @@ m1= [1 -1 -(a+b); 1 1 (a+b); 1 1 -(a+b); 1 -1 (a+b)];
 m2= (1/R)*m1;
 m3= pinv(m2);
 
+
+factorE = 1.2;
 % Inicial
 pos_inicial = start;
-x0= pos_inicial(1)*0.6; %445;
-y0= pos_inicial(2)*0.6; %316; 
+x0= pos_inicial(1)*factorE; %445;
+y0= pos_inicial(2)*factorE; %316; 
 
 
 % objetivo
@@ -28,8 +31,8 @@ pos_final = goal;
 %x_obj = pos_final(1);
 %y_obj = pos_final(2);
 
-x_obj = pos_final(1)*0.6;
-y_obj = pos_final(2)*0.6;
+x_obj = pos_final(1)*factorE;
+y_obj = pos_final(2)*factorE;
 
 pos_z = zeros(numel(u(:,1)),1);
 %zzz= pos_z*5;
@@ -39,8 +42,8 @@ y_environment = u(:,2);
 z_environment = pos_z;
 
 %Puntos de trayectoria
-x_m = x_environment*0.6;
-y_m = y_environment*0.6;
+x_m = x_environment*factorE;
+y_m = y_environment*factorE;
 z_m = z_environment;
 
 pointCloud = [x_m y_m z_m];
