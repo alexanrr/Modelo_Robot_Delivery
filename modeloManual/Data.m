@@ -1,4 +1,4 @@
-clear all; clc
+clear all; clc;
 
 %% Cargar planificacion global
 load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_7_29_15_11_9');
