@@ -5,7 +5,9 @@ S = shaperead('file2.shp');
 xLim=[-79.968  -79.965];
 yLim=[-2.1475  -2.1435];
 set(gca,'XLim', xLim, 'YLim', yLim);
-step= 0.00001
+%step= 0.000005;
+step= 0.00001;
+
 [x,y] = meshgrid(-79.96800:step:-79.96500, -2.14750:step:-2.14350);
 Ax=[];
 Ay=[];
@@ -45,7 +47,7 @@ start=[p2,p1]
 goal=[f2,f1]
 
 u=plan(planner,start,goal);
-xlim([0 5])
+%xlim([0 5])
 
 figure(1)
 show(planner);
@@ -66,4 +68,29 @@ time_test = strcat(num2str(time(1)),'_',... % Returns year
     num2str(time(5)),'_',... % returns min 
     num2str(fix(time(6))));
 
-save(strcat('.\TrayectoriaGlobal\Planning_',time_test), 'u','start','goal');
+% solo descomentar cuando hay una trayectoria nueva
+%save(strcat('.\TrayectoriaGlobal\Planning_',time_test), 'u','start','goal');
+
+
+%% Plots
+
+%set(gca,'box','off','Fontname','Arial','Fontsmoothing','on');
+set(gca,'Fontname','Arial','Fontsmoothing','on','fontsize',9.5);
+
+%ylabel('$t_d$~(msec)','fontsize',12,'Interpreter','latex')
+%xlabel('Frequency (Hz)','fontsize',12,'Interpreter','latex'), 
+
+title('A* (AStar)');%,"Interpreter",'latex')%,'FontSize',14)
+
+%xlabel('$\mathsf{X}$', 'Interpreter', 'latex', 'fontweight','bold','fontsize',10);
+xlabel('x','fontsize',9.5);
+ylabel('y', 'fontsize',9.5);
+
+set(1,'PaperSize' ,[5.4 4.4],'PaperPositionMode','auto')
+
+%cambiar direccion cuando se quiera guardar una nueva grafica en otra pc
+filepath = 'C:\Users\JamilethPC\Escritorio\MODELO TESIS V5\Modelo_Robot_Delivery\modeloManual\Plots\';
+nombre = 'TGlobal_';  %cambiar nombre para nueva imagen
+ 
+%descomentar para guardar imagen en pdf
+%print('-f1','-painters', [filepath, nombre], '-dpdf')

@@ -38,12 +38,12 @@ pos_final = goal;
 x_obj = pos_final(1)*factorE;
 y_obj = pos_final(2)*factorE;
 
-pos_z = ones(numel(u(:,1)),1);
-zzz= pos_z*0;
+pos_z = zeros(numel(u(:,1)),1);
+%zzz= pos_z*5;
 
 x_environment = u(:,1);
 y_environment = u(:,2);
-z_environment = zzz;
+z_environment = pos_z;
 
 %Puntos de trayectoria
 x_m = x_environment*factorE;
@@ -59,13 +59,14 @@ M = [x_m y_m];
 
 
 %% Datos fisicos
-M_chasis = 4;%3;           %kg
+M_chasis = 3;          %kg
 
 M_rueda =  1;           %kg
 D_rueda = 1;            %
 
 M_ruedacontacto= 1;     %kg
 D_ruedacontacto= 10;    %
+
 
 %% Datos de amortiguaciòn
 K_M = 2585.125;         %N/m
