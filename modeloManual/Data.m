@@ -70,7 +70,6 @@ D_ruedacontacto= 10;    %
 %% Datos de amortiguaciòn
 K_M = 2585.125;         %N/m
 c_M = 100;              %Nm/s
-
 K_m = 3000;             %N/m
 
 
