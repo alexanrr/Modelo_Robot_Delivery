@@ -59,7 +59,7 @@ M = [x_m y_m];
 
 
 %% Datos fisicos
-M_chasis = 4;%3;           %kg
+M_chasis = 3;%3;           %kg
 
 M_rueda =  1;           %kg
 D_rueda = 1;            %
