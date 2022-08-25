@@ -60,7 +60,7 @@ div= 10;
 M2= WaypointsToTrayectory(M,div);
 
 %% Datos fisicos
-M_chasis = 3;%3;           %kg
+M_chasis = 5;%3;           %kg
 
 M_rueda =  1;           %kg
 D_rueda = 1;            %
