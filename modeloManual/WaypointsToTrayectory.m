@@ -15,6 +15,4 @@ for i= 1: N-1
 end
 
 M2=transpose([pxd; pyd]);
-
-
 end

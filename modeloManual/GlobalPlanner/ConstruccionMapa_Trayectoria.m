@@ -1,27 +1,25 @@
 %clear;clc;
+%% Obtención del Mapa desde archivo .shp obtenido de QGis
 S = shaperead('mapa.shp');
-%figure(1)
-%mapshow(S)
+%Limites en x e y del occupancy grid
 xLim=[-79.968  -79.965];
 yLim=[-2.1475  -2.1435];
 set(gca,'XLim', xLim, 'YLim', yLim);
-%step= 0.000005;
+%se define un step, de este depende la resolución del mapa
 step= 0.00001;
-
+%se crea la malla para el occupancy grid
 [x,y] = meshgrid(-79.96800:step:-79.96500, -2.14750:step:-2.14350);
+%Empieza la iteración de los poligonos de S
 Ax=[];
 Ay=[];
 [numRows, numCols] = size(x);
-
 for i=1:length(S)
     Sx = S(i).X;
     Sy= S(i).Y ;
     Ax= [Ax, Sx];
     Ay= [Ay, Sy];
 end
-
 s=[0, find(isnan(Ax))];
-
 for p = 2:length(s)
     if p==2
         % create binary map bg using first polygon (indices 1:114)
@@ -33,29 +31,44 @@ for p = 2:length(s)
         bg = abs(bg - tmp);
     end
 end
+% matriz_Mapa contiene 1 y 0 que representan los obstaculos y el espacio
+% libre
+matriz_Mapa = flipud(bg);
+%Se crea el occupancy grid con la matriz calculada.
+map= binaryOccupancyMap(matriz_Mapa);
 
-%figure(2)
-map= binaryOccupancyMap(flipud(bg));
-%show(map)
+%% Prueba de Planificación Global con A*
 
-planner = plannerAStarGrid(map);
+% planner = plannerAStarGrid(map);
+% [p1,p2]= geotoXY(-79.9668,-2.1462,x,y, numRows, numCols);
+% [f1,f2]= geotoXY(-79.9661,-2.14477,x,y, numRows, numCols);
+% start=[p2,p1]
+% goal=[f2,f1]
+% u=plan(planner,start,goal);
+% figure(1)
+% show(planner);
 
-[p1,p2]= geotoXY(-79.9668,-2.1462,x,y, numRows, numCols);
-[f1,f2]= geotoXY(-79.9661,-2.14477,x,y, numRows, numCols);
+%% Planificación Global con RRT
 
-start=[p2,p1]
-goal=[f2,f1]
+%Se infla el mapa a un factor de  2.2 para evitar cruzar cerca de los
+%edificios.
 
-u=plan(planner,start,goal);
-%xlim([0 5])
+inflatedMap = copy(map);
+inflate(inflatedMap, 2.2);
 
-figure(1)
-show(planner);
+%Se implementa el algoritmo RRT en el 
+prm= robotics.PRM(inflatedMap);
+prm.NumNodes = 1000;
+prm.ConnectionDistance= 50;
+ax= axes;
 
-%prm = mobileRobotPRM(map,200);
-%prm.ConnectionDistance= 30;
+%Puntos de Inicio y Fin
 
-%show(prm)
+start = [119  130]
+goal= [196  274]
+
+u= findpath(prm, start, goal)
+show(prm, 'Parent', ax)
 
 
 %% Guardar trayectoria
