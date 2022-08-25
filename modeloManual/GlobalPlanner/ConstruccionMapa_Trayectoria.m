@@ -2,9 +2,9 @@
 %% Obtención del Mapa desde archivo .shp obtenido de QGis
 S = shaperead('mapa.shp');
 %Limites en x e y del occupancy grid
-xLim=[-79.968  -79.965];
-yLim=[-2.1475  -2.1435];
-set(gca,'XLim', xLim, 'YLim', yLim);
+%xLim=[-79.968  -79.965];
+%yLim=[-2.1475  -2.1435];
+%set(gca,'XLim', xLim, 'YLim', yLim);
 %se define un step, de este depende la resolución del mapa
 step= 0.00001;
 %se crea la malla para el occupancy grid
@@ -36,7 +36,6 @@ end
 matriz_Mapa = flipud(bg);
 %Se crea el occupancy grid con la matriz calculada.
 map= binaryOccupancyMap(matriz_Mapa);
-
 %% Prueba de Planificación Global con A*
 
 % planner = plannerAStarGrid(map);
@@ -67,7 +66,8 @@ ax= axes;
 start = [119  130]
 goal= [196  274]
 
-u= findpath(prm, start, goal)
+u= findpath(prm, start, goal);
+figure(3)
 show(prm, 'Parent', ax)
 
 
@@ -87,23 +87,26 @@ time_test = strcat(num2str(time(1)),'_',... % Returns year
 
 %% Plots
 
+xLim=[0  300];
+yLim=[0  400];
+set(gca,'XLim', xLim, 'YLim', yLim,'fontsize',9.5);
 %set(gca,'box','off','Fontname','Arial','Fontsmoothing','on');
 set(gca,'Fontname','Arial','Fontsmoothing','on','fontsize',9.5);
 
 %ylabel('$t_d$~(msec)','fontsize',12,'Interpreter','latex')
 %xlabel('Frequency (Hz)','fontsize',12,'Interpreter','latex'), 
 
-title('A* (AStar)');%,"Interpreter",'latex')%,'FontSize',14)
+title('RRT');%,"Interpreter",'latex')%,'FontSize',14)
 
 %xlabel('$\mathsf{X}$', 'Interpreter', 'latex', 'fontweight','bold','fontsize',10);
-xlabel('x','fontsize',9.5);
-ylabel('y', 'fontsize',9.5);
+%xlabel('x','fontsize',9.5);
+%ylabel('y', 'fontsize',9.5);
 
 set(1,'PaperSize' ,[5.4 4.4],'PaperPositionMode','auto')
 
 %cambiar direccion cuando se quiera guardar una nueva grafica en otra pc
-filepath = 'C:\Users\JamilethPC\Escritorio\MODELO TESIS V5\Modelo_Robot_Delivery\modeloManual\Plots\';
-nombre = 'TGlobal_';  %cambiar nombre para nueva imagen
+filepath = 'C:\Users\JamilethPC\Escritorio\MODELO TESIS V6\Modelo_Robot_Delivery\modeloManual\Plots\';
+nombre = 'TGlobal_RRT';  %cambiar nombre para nueva imagen
  
 %descomentar para guardar imagen en pdf
 %print('-f1','-painters', [filepath, nombre], '-dpdf')

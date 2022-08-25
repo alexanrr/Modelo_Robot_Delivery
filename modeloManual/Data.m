@@ -1,10 +1,8 @@
 clear all; clc;
 
 %% Cargar planificacion global
-% Planificacion 1
-load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_7_29_15_11_9');
-% Planificacion 2
-% load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_18_14_16_13');
+% Planificacion
+load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_27_32');
 
 %% Datos sobre el contacto rueda
 radius = 0.082;
@@ -22,16 +20,16 @@ m3= pinv(m2);
 
 
 %factorE = 1.195;
-factorE = 0.6;
+factorE = 1;
 
 % Inicial
 pos_inicial = start;
-x0= pos_inicial(1)*factorE; %358*factorE; %445;
-y0= pos_inicial(2)*factorE; %334*factorE; %316; 
+x0= pos_inicial(1)*factorE %358*factorE; %445;
+y0= pos_inicial(2)*factorE %334*factorE; %316; 
 
 
 % objetivo
-pos_final = goal;
+pos_final = goal
 %x_obj = pos_final(1);
 %y_obj = pos_final(2);
 
