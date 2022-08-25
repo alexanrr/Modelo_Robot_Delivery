@@ -56,7 +56,8 @@ pointCloud = [x_m y_m z_m];
 %% Ruta a seguir
 M_si = [0,0; 1,1; 4,2; 3,4 ; 5,5];
 M = [x_m y_m];
-
+div= 10;
+M2= WaypointsToTrayectory(M,div);
 
 %% Datos fisicos
 M_chasis = 5;%3;           %kg
