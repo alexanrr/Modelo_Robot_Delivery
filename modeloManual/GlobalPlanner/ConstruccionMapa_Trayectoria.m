@@ -49,8 +49,8 @@ map= binaryOccupancyMap(matriz_Mapa);
 
 %% Planificación Global con RRT
 
-%Se infla el mapa a un factor de  2.2 para evitar cruzar cerca de los
-%edificios.
+% Se infla el mapa a un factor de  2.2 para evitar cruzar cerca de los
+% edificios.
 
 inflatedMap = copy(map);
 inflate(inflatedMap, 2.2);
@@ -72,7 +72,6 @@ show(prm, 'Parent', ax)
 
 
 %% Guardar trayectoria
-
 time = clock;
 time_test = strcat(num2str(time(1)),'_',... % Returns year 
     num2str(time(2)),'_',... % Returns month 
@@ -84,9 +83,7 @@ time_test = strcat(num2str(time(1)),'_',... % Returns year
 % solo descomentar cuando hay una trayectoria nueva
 %save(strcat('.\TrayectoriaGlobal\Planning_',time_test), 'u','start','goal');
 
-
 %% Plots
-
 xLim=[0  300];
 yLim=[0  400];
 set(gca,'XLim', xLim, 'YLim', yLim,'fontsize',9.5);
@@ -96,7 +93,7 @@ set(gca,'Fontname','Arial','Fontsmoothing','on','fontsize',9.5);
 %ylabel('$t_d$~(msec)','fontsize',12,'Interpreter','latex')
 %xlabel('Frequency (Hz)','fontsize',12,'Interpreter','latex'), 
 
-title('RRT');%,"Interpreter",'latex')%,'FontSize',14)
+%title('RRT');%,"Interpreter",'latex')%,'FontSize',14)
 
 %xlabel('$\mathsf{X}$', 'Interpreter', 'latex', 'fontweight','bold','fontsize',10);
 %xlabel('x','fontsize',9.5);
@@ -106,7 +103,7 @@ set(1,'PaperSize' ,[5.4 4.4],'PaperPositionMode','auto')
 
 %cambiar direccion cuando se quiera guardar una nueva grafica en otra pc
 filepath = 'C:\Users\JamilethPC\Escritorio\MODELO TESIS V6\Modelo_Robot_Delivery\modeloManual\Plots\';
-nombre = 'TGlobal_RRT';  %cambiar nombre para nueva imagen
+nombre = 'TGlobal_RRT_';  %cambiar nombre para nueva imagen
  
 %descomentar para guardar imagen en pdf
 %print('-f1','-painters', [filepath, nombre], '-dpdf')

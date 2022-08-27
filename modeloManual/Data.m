@@ -2,7 +2,9 @@ clear all; clc;
 
 %% Cargar planificacion global
 % Planificacion
-load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_27_32');
+load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_58_41'); %Si pero sin el primer y ultimo punto
+%load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_26_23_40_29'); %si pero el punto final no va
+
 
 %% Datos sobre el contacto rueda
 radius = 0.082;
@@ -20,18 +22,19 @@ m3= pinv(m2);
 
 
 %factorE = 1.195;
-factorE = 1;
+factorE = 1.1;
 
 % Inicial
 pos_inicial = start;
-x0= pos_inicial(1)*factorE %358*factorE; %445;
-y0= pos_inicial(2)*factorE %334*factorE; %316; 
+u(1,:) = [];
+x_ini= u(1,:);
+y_ini= u(1,:);
 
+x0= x_ini(1)*factorE; %pos_inicial(1) %358*factorE; %445;
+y0= y_ini(2)*factorE; %pos_inicial(2) %334*factorE; %316; 
 
 % objetivo
-pos_final = goal
-%x_obj = pos_final(1);
-%y_obj = pos_final(2);
+pos_final = goal;
 
 x_obj = pos_final(1)*factorE;
 y_obj = pos_final(2)*factorE;
@@ -48,14 +51,21 @@ x_m = x_environment*factorE;
 y_m = y_environment*factorE;
 z_m = z_environment;
 
-pointCloud = [x_m y_m z_m];
-
-
-%% Ruta a seguir
 M_si = [0,0; 1,1; 4,2; 3,4 ; 5,5];
-M = [x_m y_m];
+M_ini = [x_m y_m];
+
+pointCloud0 = [x_m y_m z_m];
+
 div= 10;
-M2= WaypointsToTrayectory(M,div);
+M2= WaypointsToTrayectory(M_ini,div);
+
+x_new = unique(M2(:,1),'stable');
+y_new = unique(M2(:,2),'stable');
+z_new = zeros(numel(y_new),1);
+
+M=  [x_new y_new];
+
+pointCloud = [x_new y_new z_new];
 
 %% Datos fisicos
 M_chasis = 3;%3;           %kg
