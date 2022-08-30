@@ -14,6 +14,7 @@ height = 0.045;
 a=0.2;
 b=0.15;
 R=0.16/2;
+
 m1= [1 -1 -(a+b); 1 1 (a+b); 1 1 -(a+b); 1 -1 (a+b)];
 m2= (1/R)*m1;
 m3= pinv(m2);
@@ -49,9 +50,7 @@ x_m = x_environment*factorE;
 y_m = y_environment*factorE;
 z_m = z_environment;
 
-M_si = [129.5231,  143.0474; 129.9081 , 143.0771 ; 130.2930 , 143.1069; 
-     130.6779 , 143.1366 ; 131.0628 , 143.1663];
-
+M_si = [0,0; 1,1; 4,2; 3,4 ; 5,5];
 M_ini = [x_m y_m];
 
 pointCloud0 = [x_m y_m z_m];
@@ -64,11 +63,12 @@ y_new = unique(M2(:,2),'stable');
 
 numdata= numel(y_new);
 tramo1 = zeros(32,1);
-tramo2 = [0.13; 0.4; 0.68; 0.96; 1.25; 1.4; 1.55; 1.69; 1.85; 1.98; 2.08]; %ones(11,1);
+tramo2 = [0.15; 0.4; 0.7; 0.96; 1.1; 1.; 1.58; 1.69; 1.85; 1.98; 2.08]; %ones(11,1);
 tramo3 = ones(11,1)*2.10;
 tramo4 = ones(6,1)*1.5;
 tramo5 = ones(5,1)*0.9;
 tramo6 = ones(numdata-32-11-11-6-5,1)*0.45;
+% tramo7 = ones(,1);
 z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
 
 M=  [x_new y_new];
