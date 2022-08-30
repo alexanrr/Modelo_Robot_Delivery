@@ -63,11 +63,12 @@ y_new = unique(M2(:,2),'stable');
 
 numdata= numel(y_new);
 tramo1 = zeros(32,1);
-tramo2 = [0.13; 0.4; 0.68; 0.96; 1.25; 1.4; 1.55; 1.69; 1.85; 1.98; 2.08]; %ones(11,1);
+tramo2 = [0.15; 0.4; 0.7; 0.96; 1.1; 1.; 1.58; 1.69; 1.85; 1.98; 2.08]; %ones(11,1);
 tramo3 = ones(11,1)*2.10;
 tramo4 = ones(6,1)*1.5;
 tramo5 = ones(5,1)*0.9;
 tramo6 = ones(numdata-32-11-11-6-5,1)*0.45;
+% tramo7 = ones(,1);
 z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
 
 M=  [x_new y_new];
