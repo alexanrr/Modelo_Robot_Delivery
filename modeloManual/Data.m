@@ -20,23 +20,28 @@ m2= (1/R)*m1;
 m3= pinv(m2);
 
 
+%% Coordenadas en el ambiente
+
 %factorE = 1.195;
 factorE = 1.1;
 
 % Inicial
 pos_inicial = start;
+
 u(1,:) = [];
 x_ini= u(1,:);
 y_ini= u(1,:);
 
-x0= x_ini(1)*factorE; %445;  %pos_inicial(1) %358*factorE; 	
-y0= y_ini(2)*factorE; %316;  %pos_inicial(2) %334*factorE; 
+x0= x_ini(1)*factorE; %445;  %pos_inicial(1); 
+y0= y_ini(2)*factorE; %316;  %pos_inicial(2); 
 
 % objetivo
 pos_final = goal;
+u(end,:) = [];
+pos_fin= u(end,:);
 
-x_obj = pos_final(1)*factorE;
-y_obj = pos_final(2)*factorE;
+x_obj = pos_fin(1)*factorE;
+y_obj = pos_fin(2)*factorE;
 
 pos_z = ones(numel(u(:,1)),1);
 zzz= pos_z*0;
@@ -63,9 +68,9 @@ y_new = unique(M2(:,2),'stable');
 
 numdata= numel(y_new);
 tramo1 = zeros(32,1);
-tramo2 = [0.13; 0.4; 0.68; 0.96; 1.25; 1.4; 1.55; 1.69; 1.85; 1.98; 2.08]; %ones(11,1);
-tramo3 = ones(11,1)*2.10;
-tramo4 = ones(6,1)*1.5;
+tramo2 = [0.13; 0.4; 0.68; 0.96; 1.25; 1.4; 1.55; 1.69; 1.84; 1.98; 2.08];
+tramo3 = ones(12,1)*2.10;
+tramo4 = ones(5,1)*1.5;
 tramo5 = ones(5,1)*0.9;
 tramo6 = ones(numdata-32-11-11-6-5,1)*0.45;
 z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
@@ -73,6 +78,25 @@ z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
 M=  [x_new y_new];
 
 pointCloud = [x_new y_new z_new];
+
+%% Puntos obstáculo
+alturaobst= 0.01; %0.01 para que sea solo una tablita y pueda pasar encima
+                  %0.6 para que se un obstáculo
+
+M_obst=[ pointCloud(12:30,:); pointCloud(45:53,:)];
+puntosobst= numel(M_obst(:,1));
+
+puntomin = 1;
+puntomax = puntosobst;
+r = (puntomax-puntomin).*rand(1,1);% + a;
+
+valoraletorio= ceil(r);
+
+RandomPos = M_obst(valoraletorio,:);
+
+xobstac= RandomPos(1);
+yobstac= RandomPos(2);
+zobstac= RandomPos(3);
 
 %% Datos fisicos
 M_chasis = 3;%3;           %kg
