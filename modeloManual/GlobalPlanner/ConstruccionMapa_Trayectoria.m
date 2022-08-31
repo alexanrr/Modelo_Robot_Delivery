@@ -1,10 +1,13 @@
 %clear;clc;
 %% Obtención del Mapa desde archivo .shp obtenido de QGis
 S = shaperead('mapa.shp');
-%Limites en x e y del occupancy grid
-%xLim=[-79.968  -79.965];
-%yLim=[-2.1475  -2.1435];
-%set(gca,'XLim', xLim, 'YLim', yLim);
+% figure(1)
+% mapshow(S)
+% title("Mapa de la ESPOL")
+% Limites en x e y del occupancy grid
+% xLim=[-79.968  -79.965];
+% yLim=[-2.1475  -2.1435];
+% set(gca,'XLim', xLim, 'YLim', yLim);
 %se define un step, de este depende la resolución del mapa
 step= 0.00001;
 %se crea la malla para el occupancy grid
@@ -35,7 +38,9 @@ end
 % libre
 matriz_Mapa = flipud(bg);
 %Se crea el occupancy grid con la matriz calculada.
+%figure(1)
 map= binaryOccupancyMap(matriz_Mapa);
+%show(map)
 %% Prueba de Planificación Global con A*
 
 % planner = plannerAStarGrid(map);
@@ -67,7 +72,7 @@ start = [119  130]
 goal= [196  274]
 
 u= findpath(prm, start, goal);
-figure(3)
+figure(2)
 show(prm, 'Parent', ax)
 
 
