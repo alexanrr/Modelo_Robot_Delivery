@@ -101,12 +101,12 @@ zobstac= RandomPos(3);
 
 %% Datos fisicos
 M_chasis = 3;%3;           %kg
+    
+M_rueda =  1;              %kg
+D_rueda = 1;               %
 
-M_rueda =  1;           %kg
-D_rueda = 1;            %
-
-M_ruedacontacto= 1;     %kg
-D_ruedacontacto= 10;    %
+M_ruedacontacto= 1;        %kg
+D_ruedacontacto= 10;       %
 
 %% Datos de amortiguaciòn
 K_M = 2585.125;         %N/m
