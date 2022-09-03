@@ -98,6 +98,16 @@ xobstac= RandomPos(1);
 yobstac= RandomPos(2);
 zobstac= RandomPos(3);
 
+xp1= xobstac +0.25;
+xp2= xobstac -0.25;
+yp1= yobstac +0.25;
+yp2= yobstac -0.25;
+
+posBordes=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, yp2; 
+    xp1,yp1; xp1,yp2; xp2, yp1; xp2,yp2];
+
+
+
 %% Datos fisicos
 M_chasis = 3;%3;           %kg
     
