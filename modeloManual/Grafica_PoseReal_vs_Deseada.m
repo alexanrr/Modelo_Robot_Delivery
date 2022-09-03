@@ -7,7 +7,8 @@ QZ= Pose(:,3)
 plot(PX,PY,'b')
 hold on;
 grid on;
-plot(M(:,1), M(:,2), 'md')
+plot(M_ini(:,1), M_ini(:,2), 'm')
+grid on;
 xlabel('eje X')
 ylabel('eje y')
 title('Trayectoria del robot')
