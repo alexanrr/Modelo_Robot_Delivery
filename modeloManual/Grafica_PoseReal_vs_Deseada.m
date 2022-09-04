@@ -9,6 +9,8 @@ hold on;
 grid on;
 plot(M_ini(:,1), M_ini(:,2), 'm')
 grid on;
+hold on;
+plot(pruebaM(:,1), pruebaM(:,2))
 xlabel('eje X')
 ylabel('eje y')
 title('Trayectoria del robot')
