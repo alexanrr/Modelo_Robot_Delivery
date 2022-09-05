@@ -54,8 +54,7 @@ x_m = x_environment*factorE;
 y_m = y_environment*factorE;
 z_m = z_environment;
 
-M_si = [129.5231,  143.0474; 129.9081 , 143.0771 ; 130.2930 , 143.1069; 
-     130.6779 , 143.1366 ; 131.0628 , 143.1663];
+%M_si = [129.5231,  143.0474; 129.9081 , 143.0771 ; 130.2930 , 143.1069; 130.6779 , 143.1366 ; 131.0628 , 143.1663];
 
 M_ini = [x_m y_m];
 
@@ -80,8 +79,10 @@ M=  [x_new y_new];
 
 pointCloud = [x_new y_new z_new];
 
+
+
 %% Puntos obstáculo
-alturaobst= 0.01; %0.01 para que sea solo una tablita y pueda pasar encima
+alturaobst= 0.9; %0.01 para que sea solo una tablita y pueda pasar encima
                   %0.6 para que se un obstáculo
 
 M_obst=[ pointCloud(12:30,:); pointCloud(45:53,:)];
@@ -98,6 +99,16 @@ RandomPos = M_obst(valoraletorio,:);
 xobstac= RandomPos(1);
 yobstac= RandomPos(2);
 zobstac= RandomPos(3);
+
+xp1= xobstac +0.25;
+xp2= xobstac -0.25;
+yp1= yobstac +0.25;
+yp2= yobstac -0.25;
+
+posBordes=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, yp2; 
+    xp1,yp1; xp1,yp2; xp2, yp1; xp2,yp2];
+
+
 
 %% Datos fisicos
 M_chasis = 3;%3;           %kg
