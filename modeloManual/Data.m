@@ -79,6 +79,8 @@ M=  [x_new y_new];
 
 pointCloud = [x_new y_new z_new];
 
+
+
 %% Puntos obstáculo
 alturaobst= 0.9; %0.01 para que sea solo una tablita y pueda pasar encima
                   %0.6 para que se un obstáculo

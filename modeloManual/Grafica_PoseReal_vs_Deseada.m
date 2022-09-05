@@ -7,10 +7,10 @@ QZ= Pose(:,3);
 plot(PX,PY,'b')
 hold on;
 grid on;
-plot(M_ini(:,1), M_ini(:,2), 'm')
+plot(M(:,1), M(:,2), 'm')
 grid on;
 hold on;
-plot(pruebaM(:,1), pruebaM(:,2))
+plot(pruebaM(:,1), pruebaM(:,2), 'g')
 xlabel('eje X')
 ylabel('eje y')
 title('Trayectoria del robot')
