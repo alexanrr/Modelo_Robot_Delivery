@@ -7,13 +7,13 @@ load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_58_41'); %Si pero s
 
 
 %% Datos sobre el contacto rueda
-radius = 0.082;
+radius = 0.175/2;
 height = 0.045;
 
 %% Cinematica
 a=0.2;
-b=0.15;
-R=0.16/2;
+b=0.542;
+R=0.175/2;
 m1= [1 -1 -(a+b); 1 1 (a+b); 1 1 -(a+b); 1 -1 (a+b)];
 m2= (1/R)*m1;
 m3= pinv(m2);
@@ -61,6 +61,8 @@ M_ini = [x_m y_m];
 pointCloud0 = [x_m y_m z_m];
 
 div= 10;
+div2= 15;
+M10= WaypointsToTrayectory(M_ini,div2);
 M2= WaypointsToTrayectory(M_ini,div);
 
 x_new = unique(M2(:,1),'stable');

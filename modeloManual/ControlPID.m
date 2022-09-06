@@ -1,6 +1,6 @@
 %clear; clc;
 
-Gp =tf([21.372],[0.000054383 0.06398 1]);
+Gp =tf([21.372],[0.0012547 1.476 1]);
 Gc= pidtune(Gp, 'PID')
 
 %Respuesta al escalon en lazo abierto sin controlador
