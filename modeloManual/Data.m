@@ -2,12 +2,12 @@ clear all; clc;
 
 %% Cargar planificacion global
 % Planificacion
-load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_58_41'); %Si pero sin el primer y ultimo punto
-%load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_26_23_40_29'); %si pero el punto final no va
+load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_58_41'); %
+%load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_26_23_40_29'); %
 
 
 %% Datos sobre el contacto rueda
-radius = 0.175/2;
+radius = 0.186/2;
 height = 0.045;
 
 %% Cinematica
@@ -119,7 +119,7 @@ M_rueda =  1;              %kg
 D_rueda = 1;               %
 
 M_ruedacontacto= 1;        %kg
-D_ruedacontacto= 10;       %
+D_ruedacontacto= 12;       %
 
 %% Datos de amortiguaciòn
 K_M = 2585.125;         %N/m
