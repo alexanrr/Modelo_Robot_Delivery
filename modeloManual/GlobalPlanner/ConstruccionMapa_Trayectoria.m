@@ -1,8 +1,8 @@
 %clear;clc;
 %% Obtención del Mapa desde archivo .shp obtenido de QGis
 S = shaperead('mapa.shp');
-
-% mapshow(S)
+figure(1)
+mapshow(S)
 title("Mapa de la ESPOL")
 % Limites en x e y del occupancy grid
 xLim=[-79.968  -79.965];
@@ -39,9 +39,9 @@ end
 matriz_Mapa = flipud(bg);
 
 %Se crea el occupancy grid con la matriz calculada.
-figure(1)
+%figure(1)
 map= binaryOccupancyMap(matriz_Mapa);
-show(map)
+%show(map)
 
 set(1,'PaperSize' ,[5.4 4.4],'PaperPositionMode','auto')
 %cambiar direccion cuando se quiera guardar una nueva grafica en otra pc
@@ -61,15 +61,17 @@ nombre = 'BOG';  %cambiar nombre para nueva imagen
 % figure(1)
 % show(planner);
 
-%% Planificación Global con RRT
+%% Planificación Global con PRM
 
 % Se infla el mapa a un factor de  2.2 para evitar cruzar cerca de los
 % edificios.
 
 inflatedMap = copy(map);
 inflate(inflatedMap, 2.2);
+%figure(1)
+%show(inflatedMap)
 
-%Se implementa el algoritmo RRT en el 
+%Se implementa el algoritmo PRM en el 
 prm= robotics.PRM(inflatedMap);
 prm.NumNodes = 1000;
 prm.ConnectionDistance= 50;

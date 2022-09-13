@@ -5,7 +5,7 @@ gpsFs = 10;
 
 % Punto Inicial - Ubicación S&C en [Lat, Long, Alt]
 
-Porigen= [42.2825 -71.343 53.0352];
+Porigen= [-2.146159 -79.966755 53.0352];
 
 imuSamplesPerGPS = (imuFs/gpsFs)
 assert(imuSamplesPerGPS == fix(imuSamplesPerGPS), ...
@@ -61,9 +61,9 @@ rng('default');
 
 gps = gpsSensor('UpdateRate', gpsFs, 'ReferenceFrame', 'ENU');
 gps.ReferenceLocation = Porigen;
-gps.DecayFactor = 0.5;                % Random walk noise parameter 
-gps.HorizontalPositionAccuracy = 1.0;   
-gps.VerticalPositionAccuracy =  1.0;
+gps.DecayFactor = 0.6;                % Random walk noise parameter 
+gps.HorizontalPositionAccuracy = 2.5;   
+gps.VerticalPositionAccuracy =  2.5;
 gps.VelocityAccuracy = 0.1;
 
 %% IMU Sensors
@@ -72,12 +72,12 @@ gps.VelocityAccuracy = 0.1;
 imu = imuSensor('accel-gyro', 'ReferenceFrame', 'ENU', 'SampleRate', imuFs);
 
 % Accelerometer
-imu.Accelerometer.MeasurementRange =  19.6133;
+imu.Accelerometer.MeasurementRange =  16;
 imu.Accelerometer.Resolution = 0.0023928;
 imu.Accelerometer.NoiseDensity = 0.0012356;
 
 % Gyroscope
-imu.Gyroscope.MeasurementRange = deg2rad(250);
+imu.Gyroscope.MeasurementRange = deg2rad(2000);
 imu.Gyroscope.Resolution = deg2rad(0.0625);
 imu.Gyroscope.NoiseDensity = deg2rad(0.025);
 
@@ -147,7 +147,7 @@ end
 
 %% Simulation Loop
 
-totalSimTime = 20; % seconds
+totalSimTime = 30; % seconds
 
 % Log data for final metric computation.
 numsamples = floor(min(t(end), totalSimTime) * gpsFs);

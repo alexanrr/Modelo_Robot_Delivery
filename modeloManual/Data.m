@@ -7,8 +7,8 @@ load('./GlobalPlanner/TrayectoriaGlobal/Planning_2022_8_25_1_58_41'); %
 
 
 %% Datos sobre el contacto rueda
-radius = 0.186/2;
-height = 0.045;
+radius = 0.175/2;
+height = 0.05;
 
 %% Cinematica
 a=0.2;
@@ -61,8 +61,7 @@ M_ini = [x_m y_m];
 pointCloud0 = [x_m y_m z_m];
 
 div= 10;
-div2= 15;
-M10= WaypointsToTrayectory(M_ini,div2);
+
 M2= WaypointsToTrayectory(M_ini,div);
 
 x_new = unique(M2(:,1),'stable');
@@ -78,9 +77,14 @@ tramo6 = ones(numdata-32-11-11-6-5,1)*0.45;
 z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
 
 M=  [x_new y_new];
-
 pointCloud = [x_new y_new z_new];
+%% Ruta Alterna - Rampas
+prue=[192.193,250.594;192.2, 254.251;192.351,257.03;192.514,259.4;193.5,261.6;194.4,263.2; 195.3,265.9; 195.69,266.8; 196.11,268; 196.65, 269;197.15,271.297; 197.8,273.86; 198.3, 275.7;199,277.4; 200, 281.2; 202.4,288.25;204.74,294.42;208,296.5 ; 209.63,296;211.1,296; 212, 296.3 ];
+div= 2;
+pruebaM= WaypointsToTrayectory(prue,div);
 
+Kp =0.135293078315631;
+Ki= 2.88815347475101;
 
 
 %% Puntos obstáculo
@@ -113,7 +117,7 @@ posBordes=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, 
 
 
 %% Datos fisicos
-M_chasis = 3;%3;           %kg
+M_chasis = 3.5;%3;           %kg
     
 M_rueda =  1;              %kg
 D_rueda = 1;               %
