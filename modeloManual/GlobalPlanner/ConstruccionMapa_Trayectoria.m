@@ -39,9 +39,9 @@ end
 matriz_Mapa = flipud(bg);
 
 %Se crea el occupancy grid con la matriz calculada.
-%figure(1)
+figure(2)
 map= binaryOccupancyMap(matriz_Mapa);
-%show(map)
+show(map)
 
 set(1,'PaperSize' ,[5.4 4.4],'PaperPositionMode','auto')
 %cambiar direccion cuando se quiera guardar una nueva grafica en otra pc
