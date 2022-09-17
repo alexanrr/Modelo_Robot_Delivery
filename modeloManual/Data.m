@@ -131,5 +131,4 @@ c_M = 100;              %Nm/s
 K_m = 3000;             %N/m
 
 
-%%  Simulacion del modelo
-%sim("ModeloManual");
+
