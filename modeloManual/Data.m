@@ -78,6 +78,8 @@ z_new = [tramo1; tramo2; tramo3; tramo4; tramo5; tramo6];
 
 M=  [x_new y_new];
 pointCloud = [x_new y_new z_new];
+
+
 %% Ruta Alterna - Rampas
 prue=[192.193,250.594;192.2, 254.251;192.351,257.03;192.514,259.4;193.5,261.6;194.4,263.2; 195.3,265.9; 195.69,266.8; 196.11,268; 196.65, 269;197.15,271.297; 197.8,273.86; 198.3, 275.7;199,277.4; 200, 281.2; 202.4,288.25;204.74,294.42;208,296.5 ; 209.63,296;211.1,296];
 div= 2;
@@ -87,11 +89,11 @@ Kp =0.135293078315631;
 Ki= 2.88815347475101;
 
 
-%% Puntos obstáculo
+%% Puntos obstáculo 1
 alturaobst= 0.9; %0.01 para que sea solo una tablita y pueda pasar encima
                   %0.6 para que se un obstáculo
 
-M_obst=[ pointCloud(12:30,:); pointCloud(45:53,:)];
+M_obst=[ pointCloud(22:30,:); pointCloud(45:53,:)];
 puntosobst= numel(M_obst(:,1));
 
 puntomin = 1;
@@ -113,6 +115,29 @@ yp2= yobstac -0.25;
 
 posBordes=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, yp2; 
     xp1,yp1; xp1,yp2; xp2, yp1; xp2,yp2];
+
+
+
+%% Obstaculo 2
+
+alturaobst2= 0.9; %0.01 para que sea solo una tablita y pueda pasar encima
+                  %0.6 para que se un obstáculo
+
+M_obst2=[ pointCloud(5:21,:)];
+puntosobst2= numel(M_obst2(:,1));
+
+puntomin2 = 1;
+puntomax2 = puntosobst2;
+r2 = (puntomax2-puntomin2).*rand(1,1);% + a;
+
+valoraletorio2= ceil(r2);
+
+RandomPos2 = M_obst2(valoraletorio2,:);
+
+
+xobstac2= RandomPos2(1);
+yobstac2= RandomPos2(2);
+zobstac2= RandomPos2(3);
 
 
 
