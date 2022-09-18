@@ -139,10 +139,10 @@ xobstac2= RandomPos2(1);
 yobstac2= RandomPos2(2);
 zobstac2= RandomPos2(3);
 
-x2p1= xobstac2 +0.25;
-x2p2= xobstac2 -0.25;
-y2p1= yobstac2 +0.25;
-y2p2= yobstac2 -0.25;
+x2p1= xobstac2 +0.5;
+x2p2= xobstac2 -0.5;
+y2p1= yobstac2 +0.5;
+y2p2= yobstac2 -0.5;
 
 posBordes2=[xobstac2, yobstac2; x2p1, yobstac2; x2p2, yobstac2; xobstac2, y2p1; xobstac2, y2p2; 
     x2p1,y2p1; x2p1,y2p2; x2p2, y2p1; x2p2,y2p2];
