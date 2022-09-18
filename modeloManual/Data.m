@@ -113,7 +113,7 @@ xp2= xobstac -0.25;
 yp1= yobstac +0.25;
 yp2= yobstac -0.25;
 
-posBordes=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, yp2; 
+posBordes1=[xobstac, yobstac; xp1, yobstac; xp2, yobstac; xobstac, yp1; xobstac, yp2; 
     xp1,yp1; xp1,yp2; xp2, yp1; xp2,yp2];
 
 
@@ -139,7 +139,15 @@ xobstac2= RandomPos2(1);
 yobstac2= RandomPos2(2);
 zobstac2= RandomPos2(3);
 
+x2p1= xobstac2 +0.25;
+x2p2= xobstac2 -0.25;
+y2p1= yobstac2 +0.25;
+y2p2= yobstac2 -0.25;
 
+posBordes2=[xobstac2, yobstac2; x2p1, yobstac2; x2p2, yobstac2; xobstac2, y2p1; xobstac2, y2p2; 
+    x2p1,y2p1; x2p1,y2p2; x2p2, y2p1; x2p2,y2p2];
+
+posBordes= [posBordes1; posBordes2]
 
 %% Datos fisicos
 M_chasis = 3.5;%3;           %kg
